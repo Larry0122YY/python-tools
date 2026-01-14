@@ -4,13 +4,14 @@ import TOOLS_COMMON as fgo
 
 '''
     使用这个脚本，规则
-        1.一定要用exp那个组
+        1.剑骑极EXP图片参照
         2.助战，筛选，礼装羁绊
         3.助战，25友情的好友在第一个的
+        4.御主礼装无所谓
 
 '''
 def main():
-    fgo.main_method(rounds,'经验值')
+    fgo.main_method(rounds,'剑骑极EXP')
 
 
 def rounds(if_continue):
@@ -18,10 +19,11 @@ def rounds(if_continue):
     prepare_buff()
 
     attack(1,23)
-    attack(2,26)
 
-    # 唐僧的宝具增强技能只有一回合，所以必须在这里使用
-    fgo.servant_buff(3,1)
+    #源赖光2
+    fgo.servant_buff(1,2)
+    attack(1,26)
+
     attack(3,20)
 
     # 结算画面
@@ -30,23 +32,18 @@ def rounds(if_continue):
 
 def prepare_buff():
 
-    # 圣诞公主技能1,3
-    fgo.servant_buff(1,1)
-    fgo.servant_buff_target(1,3,2)
-
-    # 圣诞公主和saber换人
-    fgo.master_buff_sub_off(1,4)
-
-    # saber 技能1，2，3
-    fgo.servant_buff(1,1)
-    fgo.servant_buff(1,2)
+    # 阿拉什3
     fgo.servant_buff(1,3)
 
-    # 源赖光技能2
+    # 梅林1，3
+    fgo.servant_buff(2,1)
     fgo.servant_buff(2,2)
+    fgo.servant_buff_target(2,3,3)
 
-    # 唐僧技能2
+    # 山中老人1，2，3
+    fgo.servant_buff(3,1)
     fgo.servant_buff(3,2)
+    fgo.servant_buff(3,3)
 
 
 def attack(baoju_num,delay=24):
